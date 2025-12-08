@@ -1,65 +1,35 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="relative w-full h-full">
+      <div className="bg-[url('/image/pokemonbg.gif')] h-screen bg-cover bg-center flex flex-col items-center justify-center text-zinc-200">
+        <div className="w-full h-screen flex flex-col items-center justify-center bg-emerald-950/40 px-4">
+          <h1 className="font-jersey text-6xl sm:text-8xl md:text-9xl text-shadow-[0_8px_#2d2c2c] sm:text-shadow-[0_10px_#2d2c2c] text-center">
+            WELCOME TO
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <img
+            src="/image/nameLogo.png"
+            alt="PokeHUB"
+            className="h-24 sm:h-32 md:h-48 logo -mt-2 sm:-mt-4 md:-mt-6 hover:scale-105 transition-transform ease-in-out duration-900"
+          />
+          <p className="font-revalia text-sm sm:text-base md:text-xl text-center mt-2 px-4">
+            All the Pokémon Knowledge in One Place.
           </p>
+          <div className="flex flex-col justify-center sm:flex-row gap-4 sm:gap-6 lg:gap-8 mt-6 w-full max-w-xs">
+            <Link href="/library">
+              <button className="cursor-pointer w-full sm:w-auto bg-[#DE4040] hover:bg-[#CC4242] text-zinc-200 font-pixelify text-lg sm:text-xl md:text-2xl py-3 px-6 rounded-xl shadow-md hover:translate-y-0.5 transition-all duration-100">
+                Library
+              </button>
+            </Link>
+            <Link href="/battle">
+              <button className=" cursor-pointer w-full sm:w-auto border-2 border-[#DE4040] hover:bg-[#CC4242] text-[#DE4040] hover:text-zinc-200 font-pixelify text-lg sm:text-xl md:text-2xl py-3 px-6 rounded-xl hover:translate-y-0.5 transition-all duration-100">
+                Battle
+              </button>
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
