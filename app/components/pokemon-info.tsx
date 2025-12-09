@@ -17,6 +17,7 @@ import Nickname from "./pokemon-info/nickname";
 import About from "./pokemon-info/about";
 import Stats from "./pokemon-info/stats";
 import Evolution from "./pokemon-info/evolution";
+import Image from "next/image";
 
 interface PokemonInfoProps {
   pokemon: PokemonDetails | null;
