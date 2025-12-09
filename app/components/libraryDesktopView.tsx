@@ -2,19 +2,19 @@ import { PageData } from "../hooks/usePagination";
 import { PokemonListItem } from "../types/pokemon";
 import PokemonCard from "./card";
 
-interface DesktopViewProps {
+interface LibraryDesktopViewProps {
   pages: PageData[];
   currentPage: number;
   totalPages: number;
   onPokemonClick: (pokemon: PokemonListItem) => void;
 }
 
-export default function DesktopView({
+export default function LibraryDesktopView({
   pages,
   currentPage,
   totalPages,
   onPokemonClick,
-}: DesktopViewProps) {
+}: LibraryDesktopViewProps) {
   const startIndex = Math.max(0, currentPage - 3);
   const endIndex = Math.min(totalPages, currentPage + 2);
 

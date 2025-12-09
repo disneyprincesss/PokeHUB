@@ -34,6 +34,9 @@ export default function PokemonInfo({
 
   const pokemonType = pokemon?.types[0].type.name || "";
   const isDark = isDarkTextType(pokemonType);
+  const tabClass = isDark
+    ? "text-zinc-200 border-b-zinc-200"
+    : "";
 
   const nicknameHook = useNickname(pokemon?.id);
   const aboutHook = useAboutInfo(pokemon?.id);
@@ -93,7 +96,7 @@ export default function PokemonInfo({
           isDark ? "text-zinc-200" : "text-zinc-800"
         }`}
       >
-        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-jersey font-bold uppercase tracking-wider text-shadow-[5px_5px_6px_rgba(0,0,0,0.5)] sm:text-shadow-[8px_8px_10px_rgba(0,0,0,0.5)] text-center lg:text-left z-10">
+        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-jersey uppercase tracking-wider text-shadow-[5px_5px_6px_rgba(0,0,0,0.5)] sm:text-shadow-[8px_8px_10px_rgba(0,0,0,0.5)] text-center lg:text-left z-10">
           {pokemon.name}
         </h1>
 
@@ -115,19 +118,19 @@ export default function PokemonInfo({
           <TabsList>
             <TabsTrigger
               value="about"
-              className={isDark ? "text-zinc-200 border-b-zinc-200" : ""}
+              className={tabClass}
             >
               About
             </TabsTrigger>
             <TabsTrigger
               value="stats"
-              className={isDark ? "text-zinc-200 border-b-zinc-200" : ""}
+              className={tabClass}
             >
               Base Stats
             </TabsTrigger>
             <TabsTrigger
               value="evolution"
-              className={isDark ? "text-zinc-200 border-b-zinc-200" : ""}
+              className={tabClass}
             >
               Evolution
             </TabsTrigger>

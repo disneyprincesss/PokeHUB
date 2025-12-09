@@ -8,8 +8,8 @@ import { fetchPokemonDetails } from "../lib/pokeapi";
 import { usePokemonLibrary } from "../hooks/usePokemonLibrary";
 import { usePagination } from "../hooks/usePagination";
 import Navbar from "../components/navbar";
-import DesktopView from "../components/desktopView";
-import MobileView from "../components/mobileView"
+import DesktopView from "../components/libraryDesktopView";
+import MobileView from "../components/libraryMobileView"
 import PokemonInfo from "../components/pokemon-info";
 
 export default function LibraryPage() {

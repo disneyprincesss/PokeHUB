@@ -2,19 +2,19 @@ import { PageData } from "../hooks/usePagination";
 import { PokemonListItem } from "../types/pokemon";
 import PokemonCard from "./card";
 
-interface MobileViewProps {
+interface LibraryMobileViewProps {
   pageData: PageData | undefined;
   currentPage: number;
   totalPages: number;
   onPokemonClick: (pokemon: PokemonListItem) => void;
 }
 
-export default function MobileView({
+export default function LibraryMobileView({
   pageData,
   currentPage,
   totalPages,
   onPokemonClick,
-}: MobileViewProps) {
+}: LibraryMobileViewProps) {
   const allPokemon = pageData ? [...pageData.left, ...pageData.right] : [];
 
   return (

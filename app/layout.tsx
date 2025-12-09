@@ -19,12 +19,13 @@ const jersey = Jersey_15({
 
 const pixelify = Pixelify_Sans({
   variable: "--font-pixelify",
-  weight: ["400", "500", "600", "700"],
+  weight: "400",
 });
 
 const robotoSlab = Roboto_Slab({
   variable: "--font-robotoslab",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],});
+  weight: "400",
+});
 
 export const metadata: Metadata = {
   title: "PokeHUB",
