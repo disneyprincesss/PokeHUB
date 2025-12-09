@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -8,10 +9,12 @@ export default function Home() {
           <h1 className="font-jersey text-6xl sm:text-8xl md:text-9xl text-shadow-[0_8px_#2d2c2c] sm:text-shadow-[0_10px_#2d2c2c] text-center">
             WELCOME TO
           </h1>
-          <img
+          <Image
             src="/image/nameLogo.png"
             alt="PokeHUB"
-            className="h-24 sm:h-32 md:h-48 logo -mt-2 sm:-mt-4 md:-mt-6 hover:scale-105 transition-transform ease-in-out duration-900"
+            width={450}
+            height={400}
+            className="w-55 sm:w-75 md:w-108 logo -mt-2 sm:-mt-4 md:-mt-6 hover:scale-105 transition-transform ease-in-out duration-900"
           />
           <p className="font-revalia text-sm sm:text-base md:text-xl text-center mt-2 px-4">
             All the Pokémon Knowledge in One Place.

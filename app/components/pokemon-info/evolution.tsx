@@ -1,5 +1,6 @@
 import { ScrollArea } from "../ui/scroll-area";
 import { PokemonDetails } from "../../types/pokemon";
+import Image from "next/image";
 
 interface EvolutionProps {
   pokemon: PokemonDetails;
@@ -7,14 +8,19 @@ interface EvolutionProps {
   hasNickname: boolean;
 }
 
-export default function Evolution({ pokemon, isEditMode, hasNickname }: EvolutionProps) {
+export default function Evolution({
+  pokemon,
+  isEditMode,
+  hasNickname,
+}: EvolutionProps) {
   const scrollHeight = isEditMode
     ? "h-58 sm:h-68 lg:h-98"
     : hasNickname
     ? "h-57 sm:h-66"
     : "h-68 sm:h-72 lg:h-100";
 
-  const hasEvolution = pokemon.evolutionChain && pokemon.evolutionChain.length > 1;
+  const hasEvolution =
+    pokemon.evolutionChain && pokemon.evolutionChain.length > 1;
 
   return (
     <div>
@@ -50,7 +56,9 @@ export default function Evolution({ pokemon, isEditMode, hasNickname }: Evolutio
               </div>
             ))
           ) : (
-            <p className="text-base sm:text-lg">This Pokémon does not evolve.</p>
+            <p className="text-base sm:text-lg">
+              This Pokémon does not evolve.
+            </p>
           )}
         </div>
       </ScrollArea>

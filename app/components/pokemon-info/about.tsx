@@ -4,6 +4,7 @@ import { ScrollArea } from "../ui/scroll-area";
 import { PokemonDetails } from "../../types/pokemon";
 import { AboutInfo } from "../../services/api";
 import { isDarkTextType, getAbilityColor } from "../../lib/pokemon-colors";
+import Image from "next/image";
 
 interface AboutProps {
   pokemon: PokemonDetails;
@@ -62,10 +63,12 @@ export default function About({
             {pokemon.types.map((t, index) => (
               <Tooltip key={index}>
                 <TooltipTrigger>
-                  <img
+                  <Image
                     src={`/image/pokemon-type/${t.type.name}.png`}
                     alt={`${t.type.name} type`}
-                    className="h-9 sm:h-10 mr-1"
+                    width={35}
+                    height={35}
+                    className="w-9 sm:w-10 mr-1"
                   />
                 </TooltipTrigger>
                 <TooltipContent>{t.type.name}</TooltipContent>

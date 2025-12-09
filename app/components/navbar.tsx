@@ -1,7 +1,9 @@
+"use client";
+
 import Link from "next/link";
-import "../globals.css";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,10 +16,12 @@ export default function Navbar() {
     <nav className="w-full absolute top-0 px-4 sm:px-10 pr-4 sm:pr-10 lg:pr-20 py-5 flex items-center justify-between z-5">
       <div>
         <Link href="/">
-          <img
+          <Image
             src="/image/logo.png"
             alt="PokeHUB"
-            className="h-12 sm:h-16 lg:h-18 logo transition-transform hover:scale-105 hover:-translate-y-1"
+            width={155}
+            height={155}
+            className="w-28 sm:w-40 logo transition-transform hover:scale-105 hover:-translate-y-1"
           />
         </Link>
       </div>
