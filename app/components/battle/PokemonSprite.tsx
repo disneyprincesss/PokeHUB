@@ -15,9 +15,9 @@ export default function PokemonSprite({
   };
 
   const containerStyles =
-  pokemonSprite.position === "player"
-    ? "bottom-85 left-1/2 transform -translate-x-1/2 z-4 sm:bottom-40 sm:left-50"
-    : "top-28 left-1/2 transform -translate-x-1/2 z-3 sm:top-45 sm:right-60 sm:left-auto sm:transform-none lg:right-110";
+    pokemonSprite.position === "player"
+      ? "bottom-85 left-1/2 transform -translate-x-1/2 z-4 sm:bottom-40 sm:left-120"
+      : "top-28 left-1/2 transform -translate-x-1/2 z-3 sm:top-45 sm:right-60 sm:left-auto sm:transform-none lg:right-150";
 
 
   const spriteTransform =
@@ -30,11 +30,10 @@ export default function PokemonSprite({
       <img
         src={pokemonSprite.pokemon?.sprite}
         alt={pokemonSprite.pokemon?.name}
-        className={`w-40 h-40 transform ${spriteTransform} filter ${
-          pokemonSprite.isFlashing
-            ? "brightness-200 drop-shadow-[0_0_20px_#ffff00]"
-            : "drop-shadow-[4px_4px_8px_rgba(0,0,0,0.5)]"
-        } transition-filter duration-200`}
+        className={`w-40 h-40 transform ${spriteTransform} filter ${pokemonSprite.isFlashing
+          ? "brightness-200 drop-shadow-[0_0_20px_#ffff00]"
+          : "drop-shadow-[4px_4px_8px_rgba(0,0,0,0.5)]"
+          } transition-filter duration-200`}
         style={{
           imageRendering: "pixelated",
         }}

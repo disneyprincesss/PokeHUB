@@ -46,8 +46,8 @@ export default function About({
   const scrollHeight = isEditMode
     ? "h-70 sm:h-80 lg:h-105"
     : hasNickname
-    ? "h-69 sm:h-78 lg:h-100"
-    : "h-80 sm:h-84 lg:h-110";
+      ? "h-69 sm:h-78 lg:h-100"
+      : "h-80 sm:h-84 lg:h-110";
 
   const inputClass = isDark
     ? "bg-zinc-800 border-zinc-600 text-zinc-200 focus:ring-zinc-400"
@@ -176,7 +176,7 @@ function AboutEditForm({
             placeholder={
               pokemon.height ? `${(pokemon.height / 10).toFixed(2)}` : "0.00"
             }
-            className={`w-50 h-10 px-2 border rounded-md text-lg focus:outline-none focus:ring-2 ${inputClass}`}
+            className={`w-full max-w-50 h-10 px-2 border rounded-md text-lg focus:outline-none focus:ring-2 ${inputClass}`}
           />
           <span className="text-sm">meters</span>
         </div>
@@ -193,7 +193,7 @@ function AboutEditForm({
             placeholder={
               pokemon.weight ? `${(pokemon.weight / 10).toFixed(2)}` : "0.00"
             }
-            className={`w-50 h-10 px-2 border rounded-md text-lg focus:outline-none focus:ring-2 ${inputClass}`}
+            className={`w-full max-w-50 h-10 px-2 border rounded-md text-lg focus:outline-none focus:ring-2 ${inputClass}`}
           />
           <span className="text-sm">kg</span>
         </div>
@@ -205,14 +205,13 @@ function AboutEditForm({
           value={inputValue.description ?? ""}
           onChange={(e) => onDescriptionChange(e.target.value)}
           placeholder={pokemon.description}
-          className={`w-100 lg:w-lg p-2 ml-1 border rounded-md text-lg focus:outline-none focus:ring-2 resize-none ${inputClass}`}
+          className={`w-full p-2 border rounded-md text-lg focus:outline-none focus:ring-2 resize-none ${inputClass}`}
           rows={4}
           maxLength={500}
         />
         <p
-          className={`text-xs my-1 ml-1 ${
-            isDark ? "text-zinc-400" : "text-gray-800"
-          }`}
+          className={`text-xs my-1 ml-1 ${isDark ? "text-zinc-400" : "text-gray-800"
+            }`}
         >
           {(inputValue.description ?? "").length}/500 characters
         </p>
@@ -265,8 +264,8 @@ function AboutDisplay({
             {aboutInfo?.height != null
               ? `${aboutInfo.height} m`
               : pokemon.height
-              ? `${(pokemon.height / 10).toFixed(2)} m`
-              : "Unknown"}
+                ? `${(pokemon.height / 10).toFixed(2)} m`
+                : "Unknown"}
           </span>
         </div>
         <div className="flex items-center">
@@ -275,8 +274,8 @@ function AboutDisplay({
             {aboutInfo?.weight != null
               ? `${aboutInfo.weight} kg`
               : pokemon.weight
-              ? `${(pokemon.weight / 10).toFixed(2)} kg`
-              : "Unknown"}
+                ? `${(pokemon.weight / 10).toFixed(2)} kg`
+                : "Unknown"}
           </span>
         </div>
       </div>
