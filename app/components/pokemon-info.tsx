@@ -67,7 +67,7 @@ export default function PokemonInfo({
     <Card
       className={`bg-linear-to-r ${getTypeGradient(
         pokemonType
-      )} w-[95vw] max-w-6xl max-h-[90vh] sm:max-h-screen lg:max-h-[90vh] absolute inset-0 my-auto mx-auto flex flex-col lg:flex-row overflow-hidden rounded-2xl`}
+      )} w-[95vw] max-w-6xl max-h-[90vh] sm:max-h-screen lg:max-h-[80vh] absolute inset-0 my-auto mx-auto flex flex-col lg:flex-row overflow-hidden rounded-2xl`}
     >
       {/* Background Image */}
       <div className="relative w-full">
@@ -83,19 +83,17 @@ export default function PokemonInfo({
         <img
           src={pokemon.image || ""}
           alt={pokemon.name}
-          className={`z-10 mx-auto absolute right-0 h-40 sm:h-45 lg:h-100 ${
-            pokemonType === "normal"
-              ? "lg:inset-0 lg:my-auto inset-x-0 h-45 sm:h-55"
-              : "left-10 sm:left-25 top-12 lg:top-55 lg:left-40"
-          }`}
+          className={`z-10 mx-auto absolute right-0 h-40 sm:h-45 lg:h-100 ${pokemonType === "normal"
+            ? "lg:inset-0 lg:my-auto inset-x-0 h-45 sm:h-55"
+            : "left-10 sm:left-25 top-12 lg:top-55 lg:left-40"
+            }`}
         />
       </div>
 
       {/* Content */}
       <div
-        className={`w-full pb-5 lg:pb-0 flex flex-col justify-center items-center lg:items-start lg:justify-start px-0 absolute bottom-0 lg:static ${
-          isDark ? "text-zinc-200" : "text-zinc-800"
-        }`}
+        className={`w-full pb-5 lg:pb-0 flex flex-col justify-center items-center lg:items-start lg:justify-start px-3 sm:px-5 lg:pl-[15%] xl:pl-[0%] lg:pr-5 absolute bottom-0 lg:static ${isDark ? "text-zinc-200" : "text-zinc-800"
+          }`}
       >
         <h1 className="text-5xl sm:text-7xl lg:text-8xl font-jersey uppercase tracking-wider text-shadow-[5px_5px_6px_rgba(0,0,0,0.5)] sm:text-shadow-[8px_8px_10px_rgba(0,0,0,0.5)] text-center lg:text-left z-10">
           {pokemon.name}

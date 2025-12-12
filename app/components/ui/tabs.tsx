@@ -10,7 +10,7 @@ function Tabs({
   return (
     <TabsPrimitive.Root
       data-slot="tabs"
-      className={cn("flex flex-col gap-2 mt-2 lg:mt-4 w-110 sm:w-138", className)}
+      className={cn("flex flex-col gap-2 mt-2 lg:mt-4 w-full max-w-[90vw] sm:max-w-138 px-2 sm:px-0", className)}
       {...props}
     />
   )
@@ -40,7 +40,7 @@ function TabsTrigger({
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
       className={cn(
-        "cursor-pointer font-revalia text-lg data-[state=inactive]:text-zinc-500 data-[state=active]:border-b-5 border-zinc-800 dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 px-2 py-5 font-medium whitespace-nowrap focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "cursor-pointer font-revalia text-sm sm:text-lg data-[state=inactive]:text-zinc-500 data-[state=active]:border-b-5 border-zinc-800 dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1 sm:gap-1.5 px-1 sm:px-2 py-3 sm:py-5 font-medium whitespace-nowrap focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
